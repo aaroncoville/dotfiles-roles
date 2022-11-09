@@ -1,9 +1,14 @@
 ---
 
-- name: "remap capslock to escape"
+- name: "remap capslock to left control"
   osx_keybindings:
     source_key: "caps_lock"
-    destination_key: "escape"
+    destination_key: "left_control"
+
+- name: "remap left control to caps lock"
+  osx_keybindings:
+    source_key: "left_control"
+    destination_key: "caps_lock"
 
   # `osx_defaults` does not support `dict` yet, see this PR:
   # https://github.com/ansible-collections/community.general/pull/3420

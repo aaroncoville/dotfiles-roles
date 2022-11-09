@@ -1,7 +1,7 @@
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
-lvim.colorscheme = "onedarker"
+lvim.colorscheme = "dracula"
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
@@ -62,16 +62,15 @@ lvim.builtin.which_key.mappings["st"] = {
   "<cmd>lua require('telescope.builtin').live_grep({cwd = require('telescope.utils').buffer_dir()})<CR>", "Search text in current directory"
 }
 
-lvim.builtin.dashboard.active = true
-lvim.builtin.notify.active = true
+lvim.builtin.alpha.active = true
+lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
-lvim.builtin.nvimtree.show_icons.git = 0
+lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
 lvim.builtin.treesitter.ensure_installed = {
   "bash",
   "hcl",
-  "c",
   "javascript",
   "json",
   "make",
@@ -79,6 +78,7 @@ lvim.builtin.treesitter.ensure_installed = {
   "lua",
   "python",
   "typescript",
+  "tsx",
   "css",
   "rust",
   "java",
@@ -123,6 +123,10 @@ linters.setup {
     filetypes = { "python" }
   },
   {
+    exe = "eslint_d",
+    filetypes = { "javascript", "javascriptreact" }
+  },
+  {
     exe = "shellcheck",
     filetypes = { "sh" },
   },
@@ -156,6 +160,9 @@ lvim.plugins = {
       vim.g.strip_whitelines_at_eof = "1"
       vim.g.strip_whitespace_on_save = "1"
     end
+  },
+  {
+    "Mofiqul/dracula.nvim"
   },
 }
 

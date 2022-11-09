@@ -25,12 +25,41 @@ window:
 
 colors:
   primary:
-    foreground: '#ffffff'
+    background: '0x22212c'
+    foreground: '0xf8f8f2'
+
+  cursor:
+    text: '0x454158'
+    cursor: '0xf8f8f2'
+
+  selection:
+    text: '0xf8f8f2'
+    cursor: '0x454158'
+
+  normal:
+    black:   '0x22212c'
+    red:     '0xff9580'
+    green:   '0x8aff80'
+    yellow:  '0xffff80'
+    blue:    '0x9580ff'
+    magenta: '0xff80bf'
+    cyan:    '0x80ffea'
+    white:   '0xf8f8f2'
+
+  bright:
+    black:   '0x22212c'
+    red:     '0xffaa99'
+    green:   '0xa2ff99'
+    yellow:  '0xffff99'
+    blue:    '0xaa99ff'
+    magenta: '0xff99cc'
+    cyan:    '0x99ffee'
+    white:   '0xffffff'
 
 font:
   normal:
-    family: FiraCode Nerd Font
-  size: 12.0
+    family: 'Iosevka Nerd Font Mono' 
+  size: 14.0
 
 bell:
   command: None
@@ -45,28 +74,7 @@ shell:
     - tmux -u new-session -As main ";" set-option -g detach-on-destroy off
 
 key_bindings:
-  - key: N
-    mods: Command
-    action: CreateNewWindow
-  - key: Period
-    mods: Alt
-    chars: "\x1b."
-  - key: D
-    mods: Alt
-    chars: "\x1bd"
-  - { mods: Control, key: Tab, command: { program: *TMUX, args: ["select-window", "-t", "+"] }}
-  - { mods: Shift|Control, key: Tab, command: { program: *TMUX, args: ["select-window", "-t", "-"] }}
-  - { mods: Command, key: F, command: { program: *TMUX, args: [ copy-mode;, command-prompt, -i, -I, "#{pane_search_string}", -p, "(search down)", "send -X search-forward-incremental \"%%%\"" ] } }
-  - { mods: Command, key: Key0, command: { program: *TMUX, args: [ select-window, -t 0 ] } }
-  - { mods: Command, key: Key1, command: { program: *TMUX, args: [ select-window, -t 1 ] } }
-  - { mods: Command, key: Key2, command: { program: *TMUX, args: [ select-window, -t 2 ] } }
-  - { mods: Command, key: Key3, command: { program: *TMUX, args: [ select-window, -t 3 ] } }
-  - { mods: Command, key: Key4, command: { program: *TMUX, args: [ select-window, -t 4 ] } }
-  - { mods: Command, key: Key5, command: { program: *TMUX, args: [ select-window, -t 5 ] } }
-  - { mods: Command, key: Key6, command: { program: *TMUX, args: [ select-window, -t 6 ] } }
-  - { mods: Command, key: Key7, command: { program: *TMUX, args: [ select-window, -t 7 ] } }
-  - { mods: Command, key: Key8, command: { program: *TMUX, args: [ select-window, -t 8 ] } }
-  - { mods: Command, key: T, command: { program: *TMUX, args: [ new-window, -c, '#{pane_current_path}' ] } }
-  - { mods: Command|Shift, key: R, command: { program: *TMUX, args: [ command-prompt, "rename-session -- '%%'" ] } }
-  - { mods: Command, key: W, command: { program: *TMUX, args: [ kill-window ] } }
-  - { mods: Command, key: X, command: { program: *TMUX, args: [ kill-pane ] } }
+  - { key: Return,
+      mods: Command,
+      action: ToggleSimpleFullscreen 
+    }

@@ -8,7 +8,7 @@
     community.general.homebrew_cask:
       name:
         - font-powerline-symbols
-        - font-fira-code-nerd-font
+        - font-iosevka-nerd-font 
       install_options: no-quarantine
       accept_external_apps: true
 

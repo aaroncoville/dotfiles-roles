@@ -9,80 +9,88 @@ packages:
 
 brew:
   taps:
-    - aws/tap
-    - carlocab/personal
+    - hashicorp/tap
     - homebrew/bundle
+    - homebrew/cask-versions
     - homebrew/cask
-    - homebrew/cask-fonts
     - homebrew/core
-    - cloudflare/cloudflare
+    - ecodesamsung/smartthings
   casks:
     - 1password
+    - 1password-cli
     - alacritty
-    - alt-tab
-    - aws-vault
-    - brave-browser
-    - cloudflare/cloudflare/cf-terraforming
-    - font-fira-code-nerd-font
-    - hiddenbar
-    - kdiff3
+    - alfred
+    - amethyst
+    - bartender
+    - docker
+    - intellij-idea
+    - kaleidoscope 
+    - keybase
     - multipass
-    - rectangle
-    - slack
-    - telegram
-    - tunnelblick
+    - rider
+    - setapp
   packages:
     common:
-      - asciinema
       - asdf
       - autoconf
-      - automake
       - awscli
-      - azure-cli
       - bat
       - codespell
       - coreutils
-      - direnv
-      - dos2unix
+      - docker-compose
       - dust
       - exa
       - fd
+      - file-formula
+      - findutils
       - fzf
       - gh
       - ghq
+      - gimme-aws-creds
       - git-delta
-      - hadolint
-      - highlight
+      - grep
+      - httpie
       - jq
       - jsonnet
-      - k9s
-      - kustomize
       - lazygit
+      - less
+      - lettuce
+      - libressl
       - lua-language-server
+      - nano
+      - nmap
+      - openssh
+      - openssl
       - p7zip
       - packer
-      - pkg-config
       - pre-commit
-      - python-yq
+      - pyenv
+      - pyenv-virtualenv
+      - reattach-to-user-namespace
       - ripgrep
-      - sponge
-      - terraform-docs
+      - ruby
+      - screen
+      - spotifyd
+      - spotify-tui
+      - task
+      - taskwarrior-tui
+      - thefuck
+      - teleport
       - tflint
       - tfsec
       - tldr
       - tre-command
-      - tree
       - tree-sitter
       - yamllint
+      - yarn
       - zoxide
     darwin:
-      - carlocab/personal/unrar
       - dockutil
-      - switchaudio-osx
-      - ffmpeg
       - gawk
       - gnu-getopt
       - gnu-sed
+      - gnu-tar
+      - gnu-which
       - watch
       - wget
       - xz
@@ -91,7 +99,7 @@ brew:
     - duf
 
 dotfiles:
-  repo: 'https://github.com/shmileee/dotfiles'
+  repo: 'https://github.com/aaroncoville/dotfiles-roles'
   branch: 'master'
 
 neovim:
@@ -155,20 +163,6 @@ asdf_plugins:
     delete_versions: []
     global: 0.26.0
 
-  - name: "kubectl"
-    repository: "https://github.com/asdf-community/asdf-kubectl"
-    versions:
-      - 1.23.0
-    delete_versions: []
-    global: 1.23.0
-
-  - name: "helm"
-    repository: "https://github.com/Antiarchitect/asdf-helm"
-    versions:
-      - 3.8.1
-    delete_versions: []
-    global: 3.8.1
-
 golang:
   path: '{{ ansible_user_dir }}/.go'
   packages:
@@ -189,33 +183,16 @@ dockitems_disabled:
   - Notes
   - Photos
   - Reminders
-  - Safari
   - Terminal
   - iBooks
   - iTunes
 
 dockitems_enabled:
-  - name: Brave Browser
-    path: "/Applications/Brave Browser.app"
-    pos: 1
   - name: Alacritty
     path: "/Applications/Alacritty.app"
-    pos: 2
-  - name: Slack
-    path: "/Applications/Slack.app"
-    pos: 3
-  - name: Telegram
-    path: "/Applications/Telegram.app"
-    pos: 4
-  - name: Spotify
-    path: "/Applications/Spotify.app"
-    pos: 5
-
+    pos: 1 
+  
 darwin_hotkeys:
-  # remap "show spotlight search` to `⌘ + g`
-  64:
-    parameters: "103, 5, 1048576"
-    enabled: 1
   # disable "select the previous source in input menu"
   60:
     parameters: "32, 49, 262144"
