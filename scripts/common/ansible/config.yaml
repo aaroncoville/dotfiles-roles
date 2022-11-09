@@ -14,7 +14,6 @@ brew:
     - homebrew/cask-versions
     - homebrew/cask
     - homebrew/core
-    - ecodesamsung/smartthings
   casks:
     - 1password
     - 1password-cli
@@ -54,7 +53,6 @@ brew:
       - jsonnet
       - lazygit
       - less
-      - lettuce
       - libressl
       - lua-language-server
       - nano
