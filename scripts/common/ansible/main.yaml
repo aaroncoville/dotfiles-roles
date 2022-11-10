@@ -37,8 +37,5 @@
     - name: tmux
       tags: tmux
 
-    - name: sdkman
-      tags: sdkman
-
     - name: system_defaults
       tags: system_defaults
