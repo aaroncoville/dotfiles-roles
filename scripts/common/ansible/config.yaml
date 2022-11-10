@@ -21,7 +21,6 @@ brew:
     - alfred
     - amethyst
     - bartender
-    - docker
     - intellij-idea
     - kaleidoscope 
     - keybase
@@ -80,7 +79,6 @@ brew:
       - tre-command
       - tree-sitter
       - yamllint
-      - yarn
       - zoxide
     darwin:
       - dockutil
