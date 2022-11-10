@@ -6,9 +6,3 @@
   tags:
     - defaults
     - global
-
-- import_tasks: dock.yaml
-  tags: dock
-
-- import_tasks: keybindings.yaml
-  tags: keybindings
