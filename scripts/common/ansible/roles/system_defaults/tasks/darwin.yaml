@@ -1,9 +1,6 @@
----
-
 - block:
     - include_tasks: set_osx_defaults.yaml
       loop: "{{ osx_global_defaults }}"
   tags:
     - defaults
     - global
-
