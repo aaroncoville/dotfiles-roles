@@ -22,11 +22,12 @@ brew:
     - amethyst
     - bartender
     - intellij-idea
-    - kaleidoscope 
+    - kaleidoscope
     - keybase
     - multipass
     - rider
     - setapp
+    - shift
   packages:
     common:
       - asdf
@@ -186,8 +187,8 @@ dockitems_disabled:
 dockitems_enabled:
   - name: Alacritty
     path: "/Applications/Alacritty.app"
-    pos: 1 
-  
+    pos: 1
+
 darwin_hotkeys:
   # disable "select the previous source in input menu"
   60:
