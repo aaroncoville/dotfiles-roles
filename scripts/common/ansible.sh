@@ -16,16 +16,14 @@ run_playbook() {
   echo "⚪ [ansible] running playbook..."
   local playbook_opts=()
 
-  playbook_opts+=("--ask-vault-pass")
-
   if sudo_required; then
     playbook_opts+=("--ask-become-pass")
   fi
 
   export ANSIBLE_CONFIG="${cwd}/ansible/ansible.cfg"
 
-  echo "ansible-playbook -e ansible_user=$(whoami) ${cwd}/ansible/main.yaml -v ${playbook_opts[*]}"
-  ansible-playbook -e "ansible_user=$(whoami)" "${cwd}/ansible/main.yaml" -v "${playbook_opts[*]}"
+  echo "ansible-playbook -e ansible_user=$(whoami) ${cwd}/ansible/main.yaml --ask-vault-pass -v ${playbook_opts[*]}"
+  ansible-playbook -e "ansible_user=$(whoami)" "${cwd}/ansible/main.yaml" --ask-vault-pass -v "${playbook_opts[*]}"
   echo "✅ [ansible] configured!"
 }
 
