@@ -14,6 +14,7 @@ brew:
     - homebrew/cask-versions
     - homebrew/cask
     - homebrew/core
+    - dracula/install
   casks:
     - 1password
     - 1password-cli
@@ -21,6 +22,7 @@ brew:
     - alfred
     - amethyst
     - bartender
+    - dracula-macos-color-picker
     - intellij-idea
     - kaleidoscope
     - keybase
@@ -159,6 +161,14 @@ asdf_plugins:
       - 0.26.0
     delete_versions: []
     global: 0.26.0
+
+  - name: "java"
+    repository: "https://github.com/halcyon/asdf-java"
+    versions:
+      - openjdk-17.0.2
+      - zulu-11.60.19
+    delete_versions: []
+    global: openjdk-17.0.2
 
 golang:
   path: '{{ ansible_user_dir }}/.go'
