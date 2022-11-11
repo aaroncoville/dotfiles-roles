@@ -16,6 +16,8 @@ run_playbook() {
   echo "⚪ [ansible] running playbook..."
   local playbook_opts=()
 
+  playbook_opts+=("--ask-vault-pass")
+
   if sudo_required; then
     playbook_opts+=("--ask-become-pass")
   fi
