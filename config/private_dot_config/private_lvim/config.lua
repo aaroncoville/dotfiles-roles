@@ -46,9 +46,6 @@ lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Project
 lvim.builtin.which_key.mappings["n"] = { "<cmd>normal! mz[s1z=`z<CR>", "Fix spelling" }
 lvim.builtin.which_key.mappings["f"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" }
 lvim.builtin.which_key.mappings["r"] = { ":%s///g<Left><Left>", "Replace" }
-lvim.builtin.which_key.mappings["e"] = {}
-lvim.builtin.which_key.mappings["q"] = {}
-lvim.builtin.which_key.mappings["h"] = {}
 lvim.builtin.which_key.mappings["t"] = {
   name = "+Trouble",
   r = { "<cmd>Trouble lsp_references<cr>", "References" },
@@ -59,7 +56,8 @@ lvim.builtin.which_key.mappings["t"] = {
   w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnostics" },
 }
 lvim.builtin.which_key.mappings["st"] = {
-  "<cmd>lua require('telescope.builtin').live_grep({cwd = require('telescope.utils').buffer_dir()})<CR>", "Search text in current directory"
+  "<cmd>lua require('telescope.builtin').live_grep({cwd = require('telescope.utils').buffer_dir()})<CR>",
+  "Search text in current directory"
 }
 
 lvim.builtin.alpha.active = true
@@ -92,15 +90,15 @@ lvim.builtin.treesitter.highlight.enabled = true
 lvim.lsp.automatic_servers_installation = false
 
 require("lvim.lsp.manager").setup("dockerls", {
-    settings = {
-        docker = {
-            languageserver = {
-                formatter = {
-                    ignoreMultilineInstructions = true,
-                },
-            },
+  settings = {
+    docker = {
+      languageserver = {
+        formatter = {
+          ignoreMultilineInstructions = true,
         },
+      },
     },
+  },
 })
 
 local formatters = require "lvim.lsp.null-ls.formatters"
@@ -155,7 +153,7 @@ lvim.plugins = {
   },
   {
     "ntpeters/vim-better-whitespace",
-    config = function ()
+    config = function()
       vim.g.strip_whitespace_confirm = "0"
       vim.g.strip_whitelines_at_eof = "1"
       vim.g.strip_whitespace_on_save = "1"
