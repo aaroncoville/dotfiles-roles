@@ -30,6 +30,7 @@ brew:
     - rider
     - setapp
     - shift
+    - steam
   packages:
     common:
       - asdf
